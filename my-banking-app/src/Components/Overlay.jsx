@@ -1,5 +1,4 @@
 import { Box, Flex } from "@chakra-ui/react";
-import OverlayBox from "./OverlayBox";
 
 const OverlayComponent = () => {
   return (
