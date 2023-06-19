@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Progress,
   Box,
@@ -416,31 +417,14 @@ export default function Multistep() {
 
   const handleModalSubmit = () => {
     // Perform API POST request with formData
-    axios
-      .post("https://api.example.com/endpoint", formData)
-      .then((response) => {
-        // Request was successful
-        setShowModal(false);
-        toast({
-          title: "Account created.",
-          description: "We've created your account for you.",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-      })
-      .catch((error) => {
-        // Request encountered an error
-        console.error("Error creating account:", error);
-        setShowModal(false);
-        toast({
-          title: "Error",
-          description: "An error occurred while creating your account.",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      });
+    setShowModal(false);
+    toast({
+      title: "Account created.",
+      description: "We've created your account for you.",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
   };
 
   return (

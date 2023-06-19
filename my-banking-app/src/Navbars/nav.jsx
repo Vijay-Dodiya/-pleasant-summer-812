@@ -1,74 +1,5 @@
-// import {
-//   Box,
-//   Flex,
-//   IconButton,
-//   Input,
-//   InputGroup,
-//   InputRightElement,
-// } from "@chakra-ui/react";
-// import { Link } from "react-router-dom";
-// import { FaSearch } from "react-icons/fa";
-
-// import React from "react";
-
-// const NavbarUpper = () => {
-//   return (
-//     <div>
-//       <Flex
-//         as="nav"
-//         align="center"
-//         justify="space-around"
-//         padding={2}
-//         bg="blue.100"
-//         color={"blackAlpha.700"}
-//       >
-//         <Link to="/logo">
-//           <Box fontWeight="bold">Logo</Box>
-//         </Link>
-//         <InputGroup maxW="sm">
-//           <Input
-//             placeholder="Search"
-//             variant="outline"
-//             borderColor="blue.500"
-//             _focus={{ borderColor: "green.500" }}
-//           />
-//           <InputRightElement>
-//             <IconButton
-//               aria-label="Search"
-//               icon={<FaSearch />}
-//               variant="ghost"
-//               color={"blackAlpha.900"}
-//             />
-//           </InputRightElement>
-//         </InputGroup>
-//         <Flex
-//           as="nav"
-//           align="center"
-//           justifyContent="space-between"
-//           padding={2}
-//           bgGradient="linear(to-r,red.500, yellow.500)"
-//           color="white"
-//           borderRadius="md"
-//         >
-//           <Link to="/login">
-//             <Box mr={10} bg="green.500" p={2} borderRadius="md">
-//               Login
-//             </Box>
-//           </Link>
-//           <Link to="/signup">
-//             <Box ml={10} bg="green.500" p={2} borderRadius="md">
-//               Sign Up
-//             </Box>
-//           </Link>
-//         </Flex>
-//       </Flex>
-//     </div>
-//   );
-// };
-
-// export default NavbarUpper;
-
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -248,21 +179,6 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
     label: "Find Work",
     children: [
       {
@@ -278,11 +194,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
+    label: "Learn Something",
     href: "#",
   },
 ];
@@ -337,29 +249,42 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
+          <RouterLink to="/login">
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={600}
+              variant={"link"}
+              color={"black"}
+              bg={"red.300"}
+              href={"/login"}
+              padding={3}
+              _hover={{
+                bg: "red.200",
+              }}
+            >
+              Sign In
+            </Button>
+          </RouterLink>
+
+          <RouterLink to="/signUp">
+            <Button
+              as={"a"}
+              display={{ base: "none", md: "inline-flex" }}
+              variant={"link"}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"white"}
+              bg={"pink.400"}
+              href={"/signUp"}
+              padding={3}
+              _hover={{
+                bg: "pink.300",
+              }}
+            >
+              Sign Up
+            </Button>
+          </RouterLink>
         </Stack>
       </Flex>
 

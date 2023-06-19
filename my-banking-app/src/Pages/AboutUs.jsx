@@ -28,9 +28,16 @@ const AboutUs = () => {
           About Us
         </Text>
       </Center>
-      <Divider />
+      <Divider
+        width="30%"
+        margin={"auto"}
+        mt="2"
+        mb="4"
+        borderColor={"grey.500"}
+        borderWidth="5px"
+      />
 
-      <Container maxW="8xl" bg="green.400" color="#262626" fontSize="3xl">
+      <Container maxW="8xl" color="#262626" fontSize="3xl">
         For more than 170 years, we have been committed to providing our clients
         with great service and powerful financial expertise to help them meet
         their financial goals. We are proud of our longstanding history of
@@ -41,6 +48,14 @@ const AboutUs = () => {
       <Center mt={"2%"}>
         <Text fontSize="4xl">Our Commitment</Text>
       </Center>
+      <Divider
+        width="20%"
+        margin={"auto"}
+        mt="2"
+        mb="4"
+        borderColor={"blue.500"}
+        borderWidth="5px"
+      />
       <Grid templateColumns="repeat(3, 1fr)" gap={6} ml={"8%"}>
         <GridItem>
           <Card maxW="sm">
